@@ -21,9 +21,9 @@ public class HoconParser {
 
   public static void main(String[] args) throws ParseException {
     Options options = new Options();
-    Option comment = new Option("c", "comment", false, "Turn on comments");
+    Option comment = new Option("c", "comments", false, "Turn on comments");
     Option help = new Option("h", "help", false, "Print this help");
-    Option origin = new Option("o", "origin", false, "Turn on origin comments");
+    Option origin = new Option("o", "origins", false, "Turn on origin comments");
     options.addOption(comment).addOption(origin).addOption(help);
     try {
       CommandLine line = new DefaultParser().parse(options, args);
@@ -42,7 +42,7 @@ public class HoconParser {
     }
   }
 
-  private final static String cmdLine = "hocon [-h] | [-c | --comment ] [ -o | --origin ] hocon_file";
+  private final static String cmdLine = "hocon [-h] | [-c | --comments ] [ -o | --origin ] hocon_file";
   private final static String header = "Print the hocon file in json format, after all includes and substitutions";
   private final static int width = 80;
   private final static int leftPad = 2;
